@@ -19,7 +19,7 @@
    				<div class="col s-12" id="image_container" style="width:400px;
 	height:300px; border:1px dashed lightgrey;display:flex;justify-content: center;align-items: center">
    					<img id ="image" src='' class="responsive-img"/>
-   					<i class="fas fa-cloud-upload-alt" style="font-size:100px;color:#03a9f4"></i>
+   					<i class="fas fa-cloud-upload-alt" style="font-size:100px;color:#03a9f4" id="icon"></i>
 
    				</div>
    			</div>
@@ -32,10 +32,10 @@
 		   					<div class="file-field input-field">
 						      <div class="btn waves-effect waves-light  light-blue">
 						        <span>Image</span>
-						        <input type="file" onchange="file(event)" name="file">
+						        <input type="file" id="imageUpload" name="file">
 						      </div>
 						      <div class="file-path-wrapper">
-						        <input class="file-path validate" onchange="file(event)" type="text">
+						        <input class="file-path validate"  type="text">
 						      </div>
 						    </div>
 						 </div>
@@ -62,15 +62,19 @@
 	    	
 	    	img = document.getElementById("image");
 	    	
-	    	function file(e){
+	    	let imageUpload = document.getElementById("imageUpload");
+	    	let Icon= document.getElementById("icon");
+	    	imageUpload.onchange = function(e) {
 	    		console.log("Yes")
 	    		const reader = new FileReader();
 	            reader.onload=()=>{
 	                if(reader.readyState===2){
 	                   img['src']  = reader.result
+	                   Icon.style.display = "none"
 	                }
 	            }
 	            reader.readAsDataURL(e.target.files[0]);
+
 
 
 	    	}
