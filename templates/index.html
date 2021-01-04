@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css') }}">
+	 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Cat vs Dog</title>
+    </head>
+    <body>
+	<!-- Compiled and minified CSS -->
+   		<div>
+   			<div>
+
+   				<h4 style="text-align: center">
+   					Cat vs Dog Image Prediction
+   				</h4>
+   			</div>
+   			<div class="row" id="image_container_div" style="display:flex;justify-content: center;align-items: center;margin-top: 100px">
+   				<div class="col s-12" id="image_container" style="width:400px;
+	height:300px; border:1px dashed lightgrey;display:flex;justify-content: center;align-items: center">
+   					<img id ="image" src='' class="responsive-img"/>
+   					<i class="fas fa-cloud-upload-alt" style="font-size:100px;color:#03a9f4"></i>
+
+   				</div>
+   			</div>
+   			<div class="row" style="display:flex;justify-content: center;align-items: center;margin-top: 50px">
+   				
+   					<form method="POST" action="/upload" 
+   					enctype="multipart/form-data">
+   						<div class="row">
+
+		   					<div class="file-field input-field">
+						      <div class="btn waves-effect waves-light  light-blue">
+						        <span>Image</span>
+						        <input type="file" onchange="file(event)" name="file">
+						      </div>
+						      <div class="file-path-wrapper">
+						        <input class="file-path validate" onchange="file(event)" type="text">
+						      </div>
+						    </div>
+						 </div>
+						 <div>
+						    
+		   					<button type="submit"  class="btn waves-effect waves-light  light-blue" id="upload">Predict
+		   					</button>
+						      
+						    </div>
+						</div>
+
+	   					
+	   					
+	   				</form>
+   				
+   				
+   			</div>
+   		</div>
+
+
+	    <!-- Compiled and minified JavaScript -->
+	    
+	    <script>
+	    	
+	    	img = document.getElementById("image");
+	    	
+	    	function file(e){
+	    		console.log("Yes")
+	    		const reader = new FileReader();
+	            reader.onload=()=>{
+	                if(reader.readyState===2){
+	                   img['src']  = reader.result
+	                }
+	            }
+	            reader.readAsDataURL(e.target.files[0]);
+
+
+	    	}
+	    </script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </body>
+</html>
