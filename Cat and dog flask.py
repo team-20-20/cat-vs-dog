@@ -1,10 +1,11 @@
 from flask import Flask , render_template, request
 import tensorflow as tf
-from keras.preprocessing import image as IMAGE
+from tensorflow.keras.preprocessing import image as IMAGE
 
 
 app = Flask(__name__)
-MODEL = tf.keras.models.load_model("models/catVSdog.h5")
+
+MODEL = tf.keras.models.load_model("models/CatVsDog.h5")
 
 
 def predict(img):
