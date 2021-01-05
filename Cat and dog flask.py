@@ -13,7 +13,7 @@ def predict(img):
         image = IMAGE.img_to_array(img)
         image = image.reshape(-1, 256,256,3)
         pred = MODEL.predict(image)[0]
-        if pred==0:
+        if pred<0.5:
             result = "cat"
         else:
             result = "dog"
