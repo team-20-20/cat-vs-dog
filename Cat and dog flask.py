@@ -4,7 +4,7 @@ from keras.preprocessing import image as IMAGE
 
 
 app = Flask(__name__)
-MODEL = tf.keras.models.load_model("C:/Users/WIN/Desktop/cat-vs-dog-main/models/catVSdog.h5")
+MODEL = tf.keras.models.load_model("models/CatVsDog.h5")
 
 
 def predict(img):
