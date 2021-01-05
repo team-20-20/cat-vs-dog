@@ -4,6 +4,7 @@ from tensorflow.keras.preprocessing import image as IMAGE
 
 
 app = Flask(__name__)
+
 MODEL = tf.keras.models.load_model("models/CatVsDog.h5")
 
 
