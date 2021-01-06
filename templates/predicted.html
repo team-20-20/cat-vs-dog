@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css') }}">
+	 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Cat vs Dog</title>
+</head>
+<body style="background-color:#4a4343">
+    <div class="container" style="margin-top:100px">
+        <h3 style="text-align:center;color:white">PREDICTION : <strong style="color:#03a9f4">{{name}}</strong></h3>
+        <img style="margin-left:40%" src={{result}}/>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
