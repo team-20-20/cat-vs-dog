@@ -2,7 +2,7 @@ import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 from flask import Flask,request,render_template,redirect,url_for
 
-MODEL = tf.keras.models.load_model("F:\Machine learning\ML models\catVSdog.h5")
+MODEL = tf.keras.models.load_model("models/catVSdog.h5")
 app = Flask(__name__)
 
 def predict(img):
