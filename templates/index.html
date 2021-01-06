@@ -6,20 +6,25 @@
 	 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>Cat vs Dog</title>
     </head>
-    <body>
+    <body style="background-color:#4a4343">
 	<!-- Compiled and minified CSS -->
+		<nav style="height:58px" class="light-blue">
+			<div class="nav-wrapper">
+				<a  style="display: inline-block;
+    height: 100%;" class="brand-logo"><img src="https://lh3.googleusercontent.com/Z9R-ZmfMhXkupPTrYE_p43XMCGIrR_TPb7WuZwxTStoOjLZgz-gCW3pcEvB-BhVxaiU2=s170"/></a>
+
+			</div>
+		</nav>
    		<div>
    			<div>
+					<h5 style="text-align:center;margin-top:30px;color:white">Upload the image to be predicted using below upload button</h5>
 
-   				<h4 style="text-align: center">
-   					Cat vs Dog Image Prediction
-   				</h4>
+
    			</div>
-   			<div class="row" id="image_container_div" style="display:flex;justify-content: center;align-items: center;margin-top: 100px">
-   				<div class="col s-12" id="image_container" style="width:400px;
-	height:300px; border:1px dashed lightgrey;display:flex;justify-content: center;align-items: center">
+   			<div class="row" id="image_container_div" style="display:flex;justify-content: center;align-items: center;margin-top: 50px">
+   				<div class="col s-12" id="image_container" style="width:400px;height:300px; border:1px dashed lightgrey;display:flex;justify-content: center;align-items: center">
    					<img id ="image" src='' class="responsive-img"/>
-   					<i class="fas fa-cloud-upload-alt" style="font-size:100px;color:#03a9f4" id="icon"></i>
+   					<i class="fas fa-cloud-upload-alt" id="icon" style="font-size:100px;color:#03a9f4"></i>
 
    				</div>
    			</div>
@@ -27,25 +32,29 @@
    				
    					<form method="POST" action="/upload" 
    					enctype="multipart/form-data">
-   						<div class="row">
+						<div class="row">
+								<div class="col">
 
-		   					<div class="file-field input-field">
-						      <div class="btn waves-effect waves-light  light-blue">
-						        <span>Image</span>
-						        <input type="file" id="imageUpload" name="file">
-						      </div>
-						      <div class="file-path-wrapper">
-						        <input class="file-path validate"  type="text">
-						      </div>
-						    </div>
-						 </div>
-						 <div>
-						    
-		   					<button type="submit"  class="btn waves-effect waves-light  light-blue" id="upload">Predict
-		   					</button>
-						      
-						    </div>
+									<div class="file-field input-field">
+									  <div class="btn waves-effect waves-light  light-blue">
+										<span>Upload</span>
+										<input type="file" id="imageUpload"  name="file"/>
+									  </div>
+									  <div class="file-path-wrapper">
+										<input class="file-path validate" type="text"/>
+									  </div>
+									</div>
+
+								 </div>
+								 <div class="col" style="margin-top:20px">
+
+									<button type="submit"  class="btn waves-effect waves-light  light-blue" id="upload">Predict
+									</button>
+
+								 </div>
 						</div>
+
+
 
 	   					
 	   					
@@ -60,9 +69,8 @@
 	    
 	    <script>
 	    	
-	    	img = document.getElementById("image");
-	    	
-	    	let imageUpload = document.getElementById("imageUpload");
+	    	let img = document.getElementById("image");
+		let imageUpload = document.getElementById("imageUpload");
 	    	let Icon= document.getElementById("icon");
 	    	imageUpload.onchange = function(e) {
 	    		console.log("Yes")
@@ -78,6 +86,7 @@
 
 
 	    	}
+	    	
 	    </script>
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     </body>
